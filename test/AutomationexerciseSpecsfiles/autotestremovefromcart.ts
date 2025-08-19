@@ -1,4 +1,4 @@
-import RemovefromcartTest from "../automationexcersice/removeproductfromcart.ts";
+import RemovefromcartTest from "../automationexcersicePageObject/removeproductfromcart.ts";
 
 describe("Remove item from Cart", async () => {
   it("Remove from cart", async () => {

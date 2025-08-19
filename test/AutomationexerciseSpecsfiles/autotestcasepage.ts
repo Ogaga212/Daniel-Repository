@@ -1,4 +1,4 @@
-import testCasepage from "../automationexcersice/testcasepage.ts";
+import testCasepage from "../automationexcersicePageObject/testcasepage.ts";
 
 describe("Test case page", async () => {
   it("Verify test case Page", async () => {

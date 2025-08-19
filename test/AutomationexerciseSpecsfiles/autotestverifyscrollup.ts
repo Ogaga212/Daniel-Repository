@@ -1,4 +1,4 @@
-import verifyscrollup from "../automationexcersice/verifyscrollup.ts";
+import verifyscrollup from "../automationexcersicePageObject/verifyscrollup.ts";
 
 describe("Scroll Up Button", async () => {
   it("Verify Scroll Up using 'Arrow' button and Scroll Down functionality", async () => {

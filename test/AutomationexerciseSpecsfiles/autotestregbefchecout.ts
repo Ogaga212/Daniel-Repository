@@ -1,4 +1,4 @@
-import regBeforecheckout from "../automationexcersice/regbeforecheckout.ts";
+import regBeforecheckout from "../automationexcersicePageObject/regbeforecheckout.ts";
 
 describe("PlaceOrder", async () => {
   it(" Place Order: Register before Checkout", async () => {
@@ -6,7 +6,7 @@ describe("PlaceOrder", async () => {
     await regBeforecheckout.consentbut.click();
     await regBeforecheckout.regbeforechecout(
       "sam",
-      "ogaga8230000@gmail.com",
+      "testuser823shjye@gmail.com",
       "123456aB",
       "1",
       "January",

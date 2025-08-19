@@ -1,4 +1,4 @@
-import productDetailstest from "../automationexcersice/productDetailspage.ts";
+import productDetailstest from "../automationexcersicePageObject/productDetailspage.ts";
 
 describe("Product View on Autotest", async () => {
   it("Verify All Products and Products Details Page", async () => {

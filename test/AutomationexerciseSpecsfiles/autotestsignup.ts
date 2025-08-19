@@ -1,4 +1,4 @@
-import SignupAutotest from "../automationexcersice/signuppage.ts";
+import SignupAutotest from "../automationexcersicePageObject/signuppage.ts";
 
 //const SignupAutotest = import("../automationexcersice/signuppage.ts");
 
@@ -11,7 +11,7 @@ describe("Signup to Autotest website", () => {
     await browser.pause(1000);
     await SignupAutotest.signUp(
       "mike",
-      "ogaga78315@gmail.com",
+      "testuser78333335@gmail.com",
       "123456aB",
       "1",
       "January",

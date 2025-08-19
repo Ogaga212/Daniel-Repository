@@ -1,4 +1,4 @@
-import addtorecommended from "../automationexcersice/addtocartrecommended.ts";
+import addtorecommended from "../automationexcersicePageObject/addtocartrecommended.ts";
 
 describe("Brand Products", async () => {
   it("View and cart brand Products", async () => {

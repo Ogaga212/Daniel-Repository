@@ -1,4 +1,4 @@
-import viewbrand from "../automationexcersice/viewbrands.ts";
+import viewbrand from "../automationexcersicePageObject/viewbrands.ts";
 
 describe("Brand Products", async () => {
   it("View and cart brand Products", async () => {

@@ -1,4 +1,4 @@
-import AddtocartAutotest from "../automationexcersice/addtocart.ts";
+import AddtocartAutotest from "../automationexcersicePageObject/addtocart.ts";
 
 describe("Add to cart journey", async () => {
   it("User should be able to add an item to cart", async () => {

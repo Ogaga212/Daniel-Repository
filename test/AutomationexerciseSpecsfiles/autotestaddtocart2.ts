@@ -1,4 +1,4 @@
-import addTocartTest2 from "../automationexcersice/addtocart2.ts";
+import addTocartTest2 from "../automationexcersicePageObject/addtocart2.ts";
 
 describe("Auto test add product to cart", async () => {
   it("Add products in cart", async () => {

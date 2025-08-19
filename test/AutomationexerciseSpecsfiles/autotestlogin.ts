@@ -1,10 +1,10 @@
-import LoginAutotest from "../automationexcersice/loginpage.ts";
+import LoginAutotest from "../automationexcersicePageObject/loginpage.ts";
 
 describe("Login to Autotest website", async () => {
   it("Login User with correct email and password", async () => {
     browser.url("https://automationexercise.com/login");
     await LoginAutotest.consentbut.click();
-    await LoginAutotest.Login("ogaga2311@gmail.com", "123456aB");
+    await LoginAutotest.Login("nike123@gmail.com", "11running");
   });
 
   it.skip("Login User with incorrect email and password", async () => {

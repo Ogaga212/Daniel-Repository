@@ -1,4 +1,4 @@
-import downloadInvoice from "../automationexcersice/downloadinvoice.ts";
+import downloadInvoice from "../automationexcersicePageObject/downloadinvoice.ts";
 
 describe("PlaceOrder", async () => {
   it(" Place Order: Register while Checkout", async () => {
@@ -6,7 +6,7 @@ describe("PlaceOrder", async () => {
     await downloadInvoice.consentbut.click();
     await downloadInvoice.downloadInvoice(
       "sam",
-      "ogagia00117@gmail.com",
+      "testuser5638a00117@gmail.com",
       "123456aB",
       "1",
       "January",

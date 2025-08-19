@@ -1,4 +1,4 @@
-import registerWhileChecout from "../automationexcersice/regwhilecheckingout.ts";
+import registerWhileChecout from "../automationexcersicePageObject/regwhilecheckingout.ts";
 
 describe("PlaceOrder", async () => {
   it(" Place Order: Register while Checkout", async () => {

@@ -1,4 +1,4 @@
-import subscriptionTest from "../automationexcersice/subscription.ts";
+import subscriptionTest from "../automationexcersicePageObject/subscription.ts";
 
 describe("Autotest subscription", async () => {
   it("Verify subscription in home page", async () => {

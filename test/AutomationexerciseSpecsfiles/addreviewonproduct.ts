@@ -1,4 +1,4 @@
-import addareview from "../automationexcersice/addreviewonproduct.ts";
+import addareview from "../automationexcersicePageObject/addreviewonproduct.ts";
 
 describe("Brand Products", async () => {
   it("View and cart brand Products", async () => {

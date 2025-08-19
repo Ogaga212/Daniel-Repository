@@ -1,4 +1,4 @@
-import viewcategoryProducttest from "../automationexcersice/viewcatproduct.ts";
+import viewcategoryProducttest from "../automationexcersicePageObject/viewcatproduct.ts";
 
 describe("View Category Product", async () => {
   it("View Category Product", async () => {

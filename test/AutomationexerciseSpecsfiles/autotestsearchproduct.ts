@@ -1,4 +1,4 @@
-import searchProducttest from "../automationexcersice/searchproduct.ts";
+import searchProducttest from "../automationexcersicePageObject/searchproduct.ts";
 
 describe("Autotest search product field", async () => {
   it("Search Product", async () => {

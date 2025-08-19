@@ -1,4 +1,4 @@
-import ContatctUsTest from "../automationexcersice/contactus.ts";
+import ContatctUsTest from "../automationexcersicePageObject/contactus.ts";
 
 describe("Contact us Journey", async () => {
   it("User should be able to send a contact us message", async () => {

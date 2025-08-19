@@ -1,4 +1,4 @@
-import loginbeforeCheckout from "../automationexcersice/loginbeforchecout.ts";
+import loginbeforeCheckout from "../automationexcersicePageObject/loginbeforchecout.ts";
 
 describe("Placeorder", async () => {
   it("Place Order: Login before Checkout", async () => {
