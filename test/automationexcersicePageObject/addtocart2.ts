@@ -156,8 +156,8 @@ class addTocartTest2 {
     await this.firstProductInfo.isDisplayed();
     await browser.pause(1000);
     const quantityforproduct1 = await this.cartQuantity1.getText();
-    expect(quantityforproduct1).toBe("4");
-    await browser.pause(1000);
+    expect(quantityforproduct1).toBe(number);
+    
   }
 }
 export default new addTocartTest2();
