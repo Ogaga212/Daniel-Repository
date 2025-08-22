@@ -62,6 +62,12 @@ class addTocartTest2 {
   get product2total() {
     return $("//p[@class='cart_total_price' and normalize-space()='Rs. 400']");
   }
+  get product1deletekey() {
+    return $("//tr[@id='product-1']//i[@class='fa fa-times']");
+  }
+  get product2deletekey() {
+    return $("//tr[@id='product-2']//i[@class='fa fa-times']");
+  }
   get viewProduct1stitem() {
     return $(
       '//a[@href="/product_details/1" and contains(text(), "View Product")]'
@@ -126,6 +132,8 @@ class addTocartTest2 {
     await browser.pause(1000);
     await this.product2total.isDisplayed();
     await browser.pause(1000);
+    await this.product1deletekey.click();
+    await this.product2deletekey.click();
   }
 
   async quantityInCart(number: string) {
@@ -148,11 +156,8 @@ class addTocartTest2 {
     await this.firstProductInfo.isDisplayed();
     await browser.pause(1000);
     const quantityforproduct1 = await this.cartQuantity1.getText();
-    expect(quantityforproduct1).toBe("5");
+    expect(quantityforproduct1).toBe("4");
     await browser.pause(1000);
-    await this.secondProductInfo.isDisplayed();
-    const quantityforproduct2 = await this.cartQuantity2.getText();
-    expect(quantityforproduct2).toBe("1");
   }
 }
 export default new addTocartTest2();

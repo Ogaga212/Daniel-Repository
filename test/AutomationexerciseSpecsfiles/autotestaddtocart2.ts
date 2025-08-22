@@ -16,5 +16,6 @@ describe("Auto test add product to cart", async () => {
   });
 });
 /*
-I set the product quantity for each product as a variable in the page object so the test can check the exact number of items in the cart. The test works when a quantity is given, but fails if no quantity is set. (See lines 148–155.)
+firstly i deleted the two initial items that were added to the cart from the first test case after it had verified all the test steps.
+Then I set the product quantity as a variable in the page object so the test can check the exact number of items in the cart. The test works when a quantity is given, but fails if a lesser number or no quantity is set. (See lines 158–160. on the pageobject)
 */
