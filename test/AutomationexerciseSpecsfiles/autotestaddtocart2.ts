@@ -15,3 +15,6 @@ describe("Auto test add product to cart", async () => {
     await addTocartTest2.quantityInCart("4");
   });
 });
+/*
+I set the product quantity for each product as a variable in the page object so the test can check the exact number of items in the cart. The test works when a quantity is given, but fails if no quantity is set. (See lines 148–155.)
+*/

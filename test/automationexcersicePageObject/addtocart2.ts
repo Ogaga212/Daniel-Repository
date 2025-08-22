@@ -76,11 +76,21 @@ class addTocartTest2 {
   get newViewCartBut() {
     return $('//a[@href="/view_cart" and contains(., "View Cart")]');
   }
-  get newProductInfo() {
+  get firstProductInfo() {
     return $('//a[@href="/product_details/1"]');
   }
-  get cartQuantity() {
-    return $('//button[@class="disabled" and contains(., "4")]');
+  get secondProductInfo() {
+    return $('//a[@href="/product_details/2"]');
+  }
+  get cartQuantity1() {
+    return $(
+      '//tr[@id="product-1"]//td[contains(@class,"cart_quantity")]//button'
+    );
+  }
+  get cartQuantity2() {
+    return $(
+      '//tr[@id="product-2"]//td[contains(@class,"cart_quantity")]//button'
+    );
   }
 
   async addtocart() {
@@ -135,9 +145,14 @@ class addTocartTest2 {
     await browser.pause(1000);
     await this.newViewCartBut.click();
     await browser.pause(1000);
-    await this.newProductInfo.isDisplayed();
+    await this.firstProductInfo.isDisplayed();
     await browser.pause(1000);
-    await this.cartQuantity.isDisplayed();
+    const quantityforproduct1 = await this.cartQuantity1.getText();
+    expect(quantityforproduct1).toBe("5");
+    await browser.pause(1000);
+    await this.secondProductInfo.isDisplayed();
+    const quantityforproduct2 = await this.cartQuantity2.getText();
+    expect(quantityforproduct2).toBe("1");
   }
 }
 export default new addTocartTest2();
