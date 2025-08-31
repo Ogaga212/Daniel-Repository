@@ -2,20 +2,24 @@ import LoginAutotest from "../automationexcersicePageObject/loginpage.ts";
 
 describe("Login to Autotest website", async () => {
   it("Login User with correct email and password", async () => {
-    browser.url("https://automationexercise.com/login");
-    await LoginAutotest.consentbut.click();
-    await LoginAutotest.Login("nike123@gmail.com", "11running");
+    await LoginAutotest.checkHomePageIsVisible();
+    await LoginAutotest.login("testuser989rghb2zz0@gmail.com", "123456aB");
+    await expect($(LoginAutotest.loginPageImage)).toBeDisplayed();
+    await LoginAutotest.userLoggedIn("mike");
+    await LoginAutotest.deleteAccount();
+    await $(LoginAutotest.accountDeletedText).isDisplayed();
+    await $(LoginAutotest.continueAfterDeleteBtn).click();
   });
 
-  it.skip("Login User with incorrect email and password", async () => {
-    browser.url("https://automationexercise.com/");
-    await LoginAutotest.errorLogin("mail32900@gmail.com", "1234");
+  it("Login User with incorrect email and password", async () => {
+    await LoginAutotest.checkHomePageIsVisible();
+    await LoginAutotest.login("mail32900@gmail.com", "1234");
+    await $(LoginAutotest.errorMsgText).isDisplayed();
   });
-});
 
-describe("Logout from autotest website", async () => {
-  it.skip("User should be able to logout with existing email and password", async () => {
-    browser.url("https://automationexercise.com/");
-    await LoginAutotest.logout("nike123@gmail.com", "11running");
+  it("Logout User", async () => {
+    await LoginAutotest.login("nike123@gmail.com", "11running");
+    await LoginAutotest.userLoggedIn("dan");
+    await $(LoginAutotest.logoutBtn).click();
   });
 });

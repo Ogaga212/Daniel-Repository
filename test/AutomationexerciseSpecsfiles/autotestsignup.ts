@@ -1,18 +1,14 @@
-import SignupAutotest from "../automationexcersicePageObject/signuppage.ts";
-
-//const SignupAutotest = import("../automationexcersice/signuppage.ts");
+import signupAutotest from "../automationexcersicePageObject/signuppage.ts";
+import LoginAutotest from "../automationexcersicePageObject/loginpage.ts";
 
 describe("Signup to Autotest website", () => {
   it("Register User with new email address", async () => {
-    browser.url("https://automationexercise.com");
-    browser.pause(1000);
-    await SignupAutotest.consentbut.click();
-
-    await browser.pause(1000);
-    await SignupAutotest.signUp(
+    await LoginAutotest.checkHomePageIsVisible();
+    await signupAutotest.signUpheader.click();
+    await signupAutotest.signUp(
       "mike",
-      "testuser78333335@gmail.com",
-      "123456aB",
+      "testuser128977@gmail.com",
+      "11running",
       "1",
       "January",
       "2007",
@@ -28,11 +24,15 @@ describe("Signup to Autotest website", () => {
       "07896527812",
       "ACCOUNT CREATED!"
     );
+    await LoginAutotest.userLoggedIn("mike");
+    await LoginAutotest.deleteAccount();
   });
 
   it("Register User with existing email", async () => {
-    browser.url("https://automationexercise.com/login");
-    await browser.pause(1000);
-    await SignupAutotest.singnUpexistemail("nike123@gmail.com", "dan");
+    await signupAutotest.signUpheader.click();
+    await signupAutotest.newusertext.isDisplayed();
+    await signupAutotest.singnUpexistemail("nike123@gmail.com", "dan");
+    await signupAutotest.signUpbut.click();
+    await signupAutotest.errormsg.isDisplayed();
   });
 });

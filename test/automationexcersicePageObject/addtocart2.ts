@@ -1,12 +1,4 @@
 class addTocartTest2 {
-  get consentbut() {
-    return $("//p[text()='Consent']");
-  }
-  get homePageImage() {
-    return $(
-      "//div[@class='item active']//img[@alt='demo website for practice']"
-    );
-  }
   get productbut() {
     return $('//a[ contains(@href,"/products")]');
   }
@@ -100,63 +92,30 @@ class addTocartTest2 {
   }
 
   async addtocart() {
-    await this.homePageImage.isDisplayed();
-    await browser.pause(1000);
-    await this.productbut.click();
-    //  await browser.pause(1000);
-    // await this.firstProductImg.moveTo();
-    await browser.pause(1000);
-    await this.firstProductbut.click();
-    await browser.pause(1000);
-    await this.continueshopbut.click();
-    await browser.pause(1000);
-    // await this.secondProductImg.moveTo();
-    // await browser.pause(1000);
-    await this.secondProductbut.click();
-    await browser.pause(1000);
-    await this.viewcartbut.click();
-    await browser.pause(1000);
     await this.product1inCart.isDisplayed();
-    await browser.pause(1000);
     await this.product2inCart.isDisplayed();
-    await browser.pause(1000);
     await this.product1price.isDisplayed();
-    await browser.pause(1000);
     await this.product1Quantity.isDisplayed();
-    await browser.pause(1000);
     await this.product1total.isDisplayed();
-    await browser.pause(1000);
     await this.product2price.isDisplayed();
-    await browser.pause(1000);
     await this.product2Quantity.isDisplayed();
-    await browser.pause(1000);
     await this.product2total.isDisplayed();
-    await browser.pause(1000);
     await this.product1deletekey.click();
     await this.product2deletekey.click();
   }
 
   async quantityInCart(number: string) {
-    await this.homePageImage.isDisplayed();
-    await browser.pause(1000);
     await this.viewProduct1stitem.click();
-    await browser.pause(1000);
     await expect(browser).toHaveUrl(
       "https://automationexercise.com/product_details/1"
     );
-    await browser.pause(1000);
     await expect(browser).toHaveTitle("Automation Exercise - Product Details");
-    await browser.pause(1000);
     await this.newQuantity.setValue(number);
-    await browser.pause(1000);
     await this.addToCartBut.click();
-    await browser.pause(1000);
     await this.newViewCartBut.click();
-    await browser.pause(1000);
     await this.firstProductInfo.isDisplayed();
-    await browser.pause(1000);
     const quantityforproduct1 = await this.cartQuantity1.getText();
-    expect(quantityforproduct1).toBe("4");
+    expect(quantityforproduct1).toBe(number);
     await browser.pause(1000);
   }
 }

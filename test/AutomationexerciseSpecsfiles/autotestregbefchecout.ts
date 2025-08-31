@@ -1,17 +1,25 @@
 import regBeforecheckout from "../automationexcersicePageObject/regbeforecheckout.ts";
+import signupAutotest from "../automationexcersicePageObject/signuppage.ts";
+import LoginAutotest from "../automationexcersicePageObject/loginpage.ts";
+import addTocartTest2 from "../automationexcersicePageObject/addtocart2.ts";
 
 describe("PlaceOrder", async () => {
   it(" Place Order: Register before Checkout", async () => {
-    browser.url("https://automationexercise.com");
-    await regBeforecheckout.consentbut.click();
-    await regBeforecheckout.regbeforechecout(
-      "sam",
-      "testuser823shjye@gmail.com",
+    await LoginAutotest.checkHomePageIsVisible();
+    await addTocartTest2.firstProductbut.click();
+    await regBeforecheckout.continueshopbut.click();
+    await regBeforecheckout.cartbut.click();
+    await expect(browser).toHaveTitle("Automation Exercise - Checkout");
+    await regBeforecheckout.proceedtocheckoutbut.click();
+    await regBeforecheckout.registerLoginButton.click();
+    await signupAutotest.signUp(
+      "sum",
+      "testuser7theyshlit3@gmail.com",
       "123456aB",
       "1",
       "January",
       "2007",
-      "sam",
+      "sum",
       "James",
       "apple",
       "apartment 709",
@@ -21,7 +29,13 @@ describe("PlaceOrder", async () => {
       "dallas",
       "12345",
       "07896527812",
-      "ACCOUNT CREATED!",
+      "ACCOUNT CREATED!"
+    );
+    await LoginAutotest.userLoggedIn("sum");
+    await regBeforecheckout.cartbut.click();
+    await regBeforecheckout.proceedtocheckoutbut.click();
+    await regBeforecheckout.verifyaddressdetails();
+    await regBeforecheckout.enterPaymentInfo(
       "Buy order",
       "Daniel",
       "43567190278342",
@@ -29,33 +43,14 @@ describe("PlaceOrder", async () => {
       "07",
       "2029"
     );
+    await regBeforecheckout.confirmOrderbutton.click();
+    await regBeforecheckout.orderhasBeenPlacedmsg.isDisplayed();
+    await LoginAutotest.deleteAccount();
+    await $(LoginAutotest.accountDeletedText).isDisplayed();
+    await $(LoginAutotest.continueAfterDeleteBtn).click();
   });
-  it("verify billing address", async () => {
+
+  it.skip("verify billing address", async () => {
     browser.url("https://automationexercise.com");
-    await regBeforecheckout.verifyaddressdetailsincheckout(
-      "sam",
-      "ogaga82317011111@gmail.com",
-      "123456aB",
-      "1",
-      "January",
-      "2007",
-      "sam",
-      "James",
-      "apple",
-      "apartment 709",
-      "Craven street",
-      "India",
-      "texas",
-      "dallas",
-      "12345",
-      "07896527812",
-      "ACCOUNT CREATED!",
-      "Buy order",
-      "Daniel",
-      "43567190278342",
-      "341",
-      "07",
-      "2029"
-    );
   });
 });
