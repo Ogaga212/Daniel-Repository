@@ -66,7 +66,7 @@ class addTocartTest2 {
     );
   }
   get newQuantity() {
-    return $('//input[@type="number"]');
+    return $('//input[@id="quantity"]');
   }
   get addToCartBut() {
     return $('//button[@type="button" and contains(., "Add to cart")]');
@@ -90,6 +90,21 @@ class addTocartTest2 {
       '//tr[@id="product-2"]//td[contains(@class,"cart_quantity")]//button'
     );
   }
+  get writereviewtext() {
+    return $('//a[text()="Write Your Review"]');
+  }
+  get namefield() {
+    return $('//input[@id="name"]');
+  }
+  get emailfield() {
+    return $('//input[@id="email"]');
+  }
+  get textareafield() {
+    return $('//textarea[@name="review"]');
+  }
+  get submitreviewbut() {
+    return $('//button[@id="button-review"]');
+  }
 
   async addtocart() {
     await this.product1inCart.isDisplayed();
@@ -110,13 +125,20 @@ class addTocartTest2 {
       "https://automationexercise.com/product_details/1"
     );
     await expect(browser).toHaveTitle("Automation Exercise - Product Details");
+    await this.addToCartBut.click();
+    await this.firstProductInfo.isDisplayed();
     await this.newQuantity.setValue(number);
     await this.addToCartBut.click();
     await this.newViewCartBut.click();
-    await this.firstProductInfo.isDisplayed();
     const quantityforproduct1 = await this.cartQuantity1.getText();
     expect(quantityforproduct1).toBe(number);
-    await browser.pause(1000);
+    
+  }
+
+    async addreviewtoProduct(name: string, email: string, reviewtext: string) {
+    await this.namefield.setValue(name);
+    await this.emailfield.setValue(email);
+    await this.textareafield.setValue(reviewtext);
   }
 }
 export default new addTocartTest2();
