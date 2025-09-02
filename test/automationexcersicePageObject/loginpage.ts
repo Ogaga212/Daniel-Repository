@@ -35,6 +35,8 @@ class LoginAutotest {
     this.loggedInAsText = "//a[contains(text(), 'Logged in as')]";
     this.usernameText = "//b[text()]";
   }
+
+  
   async deleteAccount() {
     await $(this.deleteActBtn).click();
   }

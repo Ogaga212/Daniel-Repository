@@ -7,6 +7,7 @@ describe("Autotest subscription", async () => {
     await $(subscriptionTest.subscriptionText).scrollIntoView();
     await subscriptionTest.fillInSubscribeTextField("dan@gmail.com");
     await $(subscriptionTest.successText).getText();
+    await $(subscriptionTest.successText).isDisplayed();  
   });
 
   it("Verify Subscription in Cart page", async () => {

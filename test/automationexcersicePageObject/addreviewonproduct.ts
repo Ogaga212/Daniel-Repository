@@ -1,12 +1,6 @@
 class addareview {
-  get consentbut() {
-    return $("//p[text()='Consent']");
-  }
-  get homePageImage() {
-    return $(
-      "//div[@class='item active']//img[@alt='demo website for practice']"
-    );
-  }
+  
+  
   get productbut() {
     return $('//a[ contains(@href,"/products")]');
   }
@@ -30,7 +24,6 @@ class addareview {
   }
 
   async addreviewtoProduct(name: string, email: string, reviewtext: string) {
-    await this.homePageImage.isDisplayed();
     await this.productbut.click();
     await expect(browser).toHaveTitle("Automation Exercise - All Products");
     await this.veiwProduct1stItem.click();
